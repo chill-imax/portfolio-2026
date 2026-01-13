@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alejandra Brito | Full Stack Developer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* --- VARIABLES & RESET --- */
+      :root {
+        --bg-color: #0b121a;
+        --card-bg: #161f29;
+        --text-main: #ffffff;
+        --text-muted: #a0a0a0;
+        --accent: #daff3f;
+        --accent-hover: #c2e62e;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Montserrat", sans-serif;
+        line-height: 1.2;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: 0.3s;
+      }
+      ul {
+        list-style: none;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .section {
+        padding: 80px 0;
+      }
+
+      /* --- HERO --- */
+      .hero {
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        margin-bottom: 20px;
+      }
+      .hero h2 {
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        color: var(--accent);
+        margin-bottom: 30px;
+      }
+      .hero-desc {
+        max-width: 600px;
+        margin: 0 auto 40px;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--accent);
+        color: #000;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(218, 255, 63, 0.2);
+      }
+
+      .tech-stack {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+      .tech-item {
+        font-size: 0.9rem;
+        font-weight: 600;
+        padding: 6px 14px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* --- PROJECTS --- */
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 60px;
+      }
+      .section-title span {
+        color: var(--accent);
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+      }
+
+      .project-card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+      }
+
+      .card-content {
+        padding: 30px;
+      }
+
+      .project-tag {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--accent);
+        font-weight: 700;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .project-title {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+        color: #fff;
+      }
+      .project-desc {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+
+      .tech-tags {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+      }
+      .tech-tags span {
+        font-size: 0.75rem;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+
+      .card-links {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 30px;
+        display: flex;
+        gap: 15px;
+      }
+      .link-item {
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .link-item:hover {
+        color: var(--accent);
+      }
+
+      footer {
+        text-align: center;
+        padding: 50px 0;
+        color: var(--text-muted);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="container">
+        <h1>Hola, soy Alejandra Brito</h1>
+        <h2>Systems Engineering Student & Full Stack Developer</h2>
+        <p class="hero-desc">
+          Transformo procesos manuales en soluciones digitales eficientes.
+          Especializada en desarrollo moderno con React y gestión de datos.
+        </p>
+        <a href="#projects" class="btn">Ver Portafolio</a>
+
+        <div class="tech-stack">
+          <span class="tech-item">React.js</span>
+          <span class="tech-item">PHP & MySQL</span>
+          <span class="tech-item">Tailwind CSS</span>
+          <span class="tech-item">Vite</span>
+          <span class="tech-item">Git</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Mis <span>Proyectos</span></h2>
+
+        <div class="projects-grid">
+          <article
+            class="project-card"
+            style="border-color: rgba(218, 255, 63, 0.3)"
+          >
+            <div class="card-content">
+              <span class="project-tag">⭐ Internship Project (Pasantías)</span>
+              <h3 class="project-title">EvaluaPro - Gestión Institucional</h3>
+              <p class="project-desc">
+                Sistema integral para digitalizar la evaluación de desempeño en
+                instituciones públicas. Gestiona métricas ODI, automatiza
+                reportes PDF y garantiza seguridad de datos en red local (100%
+                Offline).
+              </p>
+              <div class="tech-tags">
+                <span>React + Vite</span>
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>Tailwind</span>
+                <span>XAMPP</span>
+              </div>
+            </div>
+            <div class="card-links">
+              <span style="color: var(--text-muted); font-size: 0.85rem"
+                >🔒 Acceso Restringido (Institucional)</span
+              >
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="card-content">
+              <span class="project-tag">Frontend & Marketing</span>
+              <h3 class="project-title">The Sweet AI</h3>
+              <p class="project-desc">
+                Landing page desarrollada desde cero para una herramienta de IA.
+                Enfocada en conversión, diseño "Pixel-Perfect", animaciones
+                suaves y optimización de carga.
+              </p>
+              <div class="tech-tags">
+                <span>Responsive Design</span>
+                <span>CSS3 Animations</span>
+                <span>SEO Friendly</span>
+                <span>UI/UX</span>
+              </div>
+            </div>
+            <div class="card-links">
+              <a href="https://thesweet.ai/" target="_blank" class="link-item"
+                >🚀 Visitar Web Oficial</a
+              >
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="card-content">
+              <span class="project-tag">Full Stack App</span>
+              <h3 class="project-title">Sweet Manager</h3>
+              <p class="project-desc">
+                Asistente de gestión de inventario y marketing. Permite
+                automatizar respuestas a clientes y controlar el stock en tiempo
+                real mediante una interfaz intuitiva.
+              </p>
+              <div class="tech-tags">
+                <span>MERN Stack</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+                <span>Express</span>
+              </div>
+            </div>
+            <div class="card-links">
+              <a href="https://getsweet.ai/" target="_blank" class="link-item"
+                >🔗 Visitar Web</a
+              >
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="card-content">
+              <span class="project-tag">API Integration</span>
+              <h3 class="project-title">Chill IMAX</h3>
+              <p class="project-desc">
+                Buscador de películas interactivo en tiempo real. Consume una
+                API pública para filtrar y mostrar resultados dinámicos con un
+                diseño moderno.
+              </p>
+              <div class="tech-tags">
+                <span>React.js</span>
+                <span>CSS Modules</span>
+                <span>REST API</span>
+              </div>
+            </div>
+            <div class="card-links">
+              <a
+                href="https://chill-imax.github.io/react_buscador_pelis/"
+                target="_blank"
+                class="link-item"
+                >🔗 Ver Demo</a
+              >
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="card-content">
+              <span class="project-tag">Web Development</span>
+              <h3 class="project-title">Instant Coloring Books</h3>
+              <p class="project-desc">
+                Plataforma web dedicada a la distribución y descarga de recursos
+                digitales artísticos (libros de colorear).
+              </p>
+              <div class="tech-tags">
+                <span>HTML/CSS</span>
+                <span>JavaScript</span>
+                <span>Responsive</span>
+              </div>
+            </div>
+            <div class="card-links">
+              <a
+                href="https://instantcoloringbooks.com/"
+                target="_blank"
+                class="link-item"
+                >🔗 Visitar Web</a
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>© 2026 Alejandra Brito. Ready to code.</p>
+      </div>
+    </footer>
+  </body>
+</html>
